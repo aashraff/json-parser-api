@@ -2,7 +2,7 @@
 name := """json-parser-api"""
 organization := "org.au.fin"
 
-version := "1.0-SNAPSHOT"
+version := "1.0"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
@@ -10,6 +10,8 @@ scalaVersion := "2.13.5"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
+libraryDependencies += "org.julienrf" %% "play-json-derived-codecs" % "10.0.1"
+
 
 enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)

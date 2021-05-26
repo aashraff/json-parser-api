@@ -3,23 +3,32 @@
 ## Description
 An API for parsing JSON data
 
-## Development Env
+## Development Env & tooling
 - Alpine OS
 - Scala 2.13
 - Play API Framework
 - SBT for build
 - Open JDK 8 SDK
 - Docker container
+- Logback
 - Jenkins CI/CD
 - Git VCS
+- Postman / curl
 
 ## Running the project
 ```
-$sbt run
+Dev:
+$sbt "~run 8080" or sbt "run 8080"
 $sbt docker:stage
 $sbt docker:publishLocal
-$docker run --rm -p8080:8080 json-parser-api:1.0-SNAPSHOT
+$docker run --rm -p8080:8080 json-parser-api:1.0
+
+Prod:
+$sbt "start -Dhttp.port=8080"
 ```
+
+### Testing the prject
+curl localhost:9000/api/parse
 
 ### Design principles
  - [SOLID](https://en.wikipedia.org/wiki/SOLID)

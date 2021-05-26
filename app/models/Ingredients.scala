@@ -1,9 +1,14 @@
 package models
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OFormat}
+import julienrf.json.derived
 
 sealed trait Ingredient {
     val name: String
+}
+
+object Ingredient {
+    implicit val format: OFormat[Ingredient] = derived.oformat[Ingredient]()
 }
 
 case class ArtificialIngredient(name: String) extends Ingredient
