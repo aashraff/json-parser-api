@@ -1,19 +1,23 @@
 # JSON Parser API
 
 ## Description
-An API for parsing JSON data
+A RESTful API for parsing JSON data using MVC design pattern
 
-## Development Env & tooling
+## DevOps
 - Alpine OS
-- Scala 2.13
-- Play API Framework
-- SBT for build
+- Scala 2.13 language
+- Play API MVC Framework
+- SBT build
 - Open JDK 8 SDK
 - Docker container
-- Logback
-- Jenkins CI/CD
+- Logback logging
+- Jenkins X on Kubernetes with GitOps for CI/CD
 - Git VCS
-- Postman / curl
+- ScalaTest for Unit testing
+- Postman / curl for API testing
+- Auth0 for API Authentication using OAuth
+- Swagger UI for API specification (ToDo)
+
 
 ## Running the project
 ```
