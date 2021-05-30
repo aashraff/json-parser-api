@@ -24,5 +24,5 @@ enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 enablePlugins(AshScriptPlugin)
 swaggerDomainNameSpaces := Seq("models")
-// mainClass in Compile := Some("App")
+mainClass in Compile := Some("App $version")
 dockerBaseImage      := "openjdk:jre-alpine"

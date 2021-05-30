@@ -1,5 +1,8 @@
 object App {
     def main(args: Array[String]) = {
-        println("Welcome to JSON Parser API!")
+        if(args.length > 0)
+          println("JSON Parser API Demo " + args(0))
+        else 
+          println("JSON Parser API Demo!")
     }
 }

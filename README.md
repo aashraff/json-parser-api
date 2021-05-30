@@ -22,17 +22,20 @@ A RESTful API for parsing JSON data using MVC design pattern
 ## Running the project
 ```
 Dev:
-$sbt "~run 9000" or sbt "run 9000"
-$sbt docker:stage
-$sbt docker:publishLocal
-$docker run --rm -p9000:9000 json-parser-api:1.0
+sbt "~run 9000" or sbt "run 9000"
+sbt docker:stage
+sbt docker:publishLocal
+docker run --rm -p9000:9000 json-parser-api:1.0
 
 Prod:
-$sbt "start -Dhttp.port=9000"
+docker-compose up
 ```
 
-### Testing the prject
-curl localhost:9000/api/parse
+### Testing docker
+bash docker-tests.sh $PWD
+
+### Smoke testing
+curl -v -d '{"price": 3.14, "ingredients": [{"name": "naturals"}, {"name": "artifical"}]}' -H 'Content-Type: application/json' -H 'Authorization: Bearer <token>' -x POST localhost:9000/api/parse
 
 ### Design principles
  - [SOLID](https://en.wikipedia.org/wiki/SOLID)

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  play-rest-api:
+    image: "json-parser-api:1.0"
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./conf:/etc/api
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf/nginx:/etc/nginx
+networks: 
+  default: 
+    external: 
+      name: rest-nginx
