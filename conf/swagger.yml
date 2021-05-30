@@ -1,0 +1,30 @@
+  openapi: 3.0.0
+  info: 
+    title: "JSON Parser API"
+    description: "Parse and validate JSON POST request"
+  consumes:
+    - application/json
+  produces: 
+    - application/json
+
+  paths:
+    /api/parse:
+      post:
+        summary: Parse and validate JSON POST request.
+        description: Parse a JSON object of Price with a Set of Ingredient name.
+        responses:
+          '200':
+            description: Successfully validated JSON object
+          '401':
+            description: Not authorised to access this service
+          '403':
+            description: Invalid access token
+    /:
+      get:
+        summary: API Home.
+        description: Welcome to JSON Parser.
+        responses:
+          '200':
+            description: Success
+
+

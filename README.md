@@ -16,19 +16,19 @@ A RESTful API for parsing JSON data using MVC design pattern
 - ScalaTest for Unit testing
 - Postman / curl for API testing
 - Auth0 for API Authentication using OAuth
-- Swagger UI for API specification (ToDo)
+- [Swagger UI for API specification](http://localhost:9000/docs/swagger-ui/index.html?url=/assets/swagger.json)
 
 
 ## Running the project
 ```
 Dev:
-$sbt "~run 8080" or sbt "run 8080"
+$sbt "~run 9000" or sbt "run 9000"
 $sbt docker:stage
 $sbt docker:publishLocal
-$docker run --rm -p8080:8080 json-parser-api:1.0
+$docker run --rm -p9000:9000 json-parser-api:1.0
 
 Prod:
-$sbt "start -Dhttp.port=8080"
+$sbt "start -Dhttp.port=9000"
 ```
 
 ### Testing the prject
@@ -54,6 +54,6 @@ curl localhost:9000/api/parse
 - GitOps for SCM
     - manage environment specific properties
  - CI/CD(Jenkins)
- - Blue/Green deployment
+ - Canary deployment
  - KPI tracking(Graphana)
  
