@@ -10,13 +10,14 @@ A RESTful API for parsing JSON data using MVC design pattern
 - SBT build
 - Open JDK 8 SDK
 - Docker container
+- NGINX web server
 - Logback logging
 - Jenkins X on Kubernetes with GitOps for CI/CD
 - Git VCS
 - ScalaTest for Unit testing
 - Postman / curl for API testing
 - Auth0 for API Authentication using OAuth
-- [Swagger UI for API specification](http://localhost:9000/docs/swagger-ui/index.html?url=/assets/swagger.json)
+- Swagger UI for API specification
 
 
 ## Running the project
@@ -34,8 +35,18 @@ docker-compose up
 ### Testing docker
 bash docker-tests.sh $PWD
 
-### Smoke testing
-curl -v -d '{"price": 3.14, "ingredients": [{"name": "naturals"}, {"name": "artifical"}]}' -H 'Content-Type: application/json' -H 'Authorization: Bearer <token>' -x POST localhost:9000/api/parse
+### Unit Testing
+sbt test
+
+### API Testing
+- Using curl
+  
+  ```
+  curl -v -d '{"price": 3.14, "ingredients": [{"name": "naturals"}, {"name": "artifical"}]}' -H 'Content-Type: application/json' -H 'Authorization: Bearer <token>' -x POST localhost:9000/api/parse
+  ```
+
+- [Swagger UI for API specification & smoke testing](http://localhost:9000/docs/swagger-ui/index.html?url=/assets/swagger.json)
+- Advanced testing: [Postman](https://web.postman.co/)
 
 ### Design principles
  - [SOLID](https://en.wikipedia.org/wiki/SOLID)
@@ -53,10 +64,10 @@ curl -v -d '{"price": 3.14, "ingredients": [{"name": "naturals"}, {"name": "arti
 
 ## Ops process
 - SLA
-- Code coverage & vulnerability scanning(SonarQube)
+- Code coverage & vulnerability scanning(SonarQube ToDo)
 - GitOps for SCM
-    - manage environment specific properties
- - CI/CD(Jenkins)
- - Canary deployment
- - KPI tracking(Graphana)
+    - manage environment specific properties (ToDo)
+ - CI/CD(Jenkins X on Kubernetes)
+ - Canary deployment (ToDo)
+ - KPI tracking(Graphana ToDo) 
  
