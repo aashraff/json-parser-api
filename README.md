@@ -34,11 +34,14 @@ docker-compose up
 ```
 
 ### Testing docker
+```
 bash docker-tests.sh $PWD
+```
 
 ### Unit Testing
+```
 sbt test
-
+```
 
 ### API Testing
 - Using curl
