@@ -15,6 +15,7 @@ A RESTful API for parsing JSON data using MVC design pattern
 - Jenkins X on Kubernetes with GitOps for CI/CD
 - Git VCS
 - ScalaTest for Unit testing
+- Scalastyle for style check 
 - Postman / curl for API testing
 - Auth0 for API Authentication using OAuth
 - Swagger UI for API specification
@@ -33,10 +34,14 @@ docker-compose up
 ```
 
 ### Testing docker
+```
 bash docker-tests.sh $PWD
+```
 
 ### Unit Testing
+```
 sbt test
+```
 
 ### API Testing
 - Using curl
@@ -67,7 +72,7 @@ sbt test
 - Code coverage & vulnerability scanning(SonarQube ToDo)
 - GitOps for SCM
     - manage environment specific properties (ToDo)
- - CI/CD(Jenkins X on Kubernetes)
+ - CI/CD(Jenkins 2/Jenkins X on Kubernetes)
  - Canary deployment (ToDo)
- - KPI tracking(Graphana ToDo) 
+ - KPI tracking(Graphana) (ToDo) 
  
