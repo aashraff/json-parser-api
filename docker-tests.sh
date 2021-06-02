@@ -3,7 +3,7 @@ rootPath=$1
 nginxVersion=1.19
 
 # Check nginx config
-docker run --rm -t -a stdout --name my-nginx -v ${rootPath}/config/:/etc/nginx/:ro nginx:$nginxVersion nginx -c /etc/nginx/nginx.conf -t; nginx -v
+docker run --rm -t -a stdout --name my-nginx -v ${rootPath}/config/:/etc/nginx/:ro nginx:$nginxVersion nginx -c /etc/nginx/nginx.conf -t && nginx -v
 
 if [ $? -ne 0 ]; then
     echo NGINX tests FAILED

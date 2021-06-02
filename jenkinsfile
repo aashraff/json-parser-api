@@ -27,6 +27,11 @@ pipeline {
         sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt docker:publishLocal"
       }
     }
+    stage('Docker Test') {
+      steps {
+        sh "./docker-tests.sh"
+      }
+    }    
   }
 }
 
