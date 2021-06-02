@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'sbt-slave'
-  }
+  agent any
 
   environment {
     CI = 'jenkins'
@@ -31,7 +29,7 @@ pipeline {
     stage('Docker Test') {
       steps {
         echo "Testing Docker image"
-        sh "./docker-tests.sh"
+        sh "./docker-tests.sh $PWD"
       }
     }    
   }
