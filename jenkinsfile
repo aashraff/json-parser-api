@@ -24,11 +24,13 @@ pipeline {
     }
     stage('Docker Publish') {
       steps {
+        echo "Publishing docker image..."
         sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt docker:publishLocal"
       }
     }
     stage('Docker Test') {
       steps {
+        echo "Testing Docker image"
         sh "./docker-tests.sh"
       }
     }    
